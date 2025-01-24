@@ -17,7 +17,7 @@
     justify-content: flex-end;
     color: var(--White, #FFF);
     background: linear-gradient(0deg, #2A2D2C 0.09%, rgba(42, 45, 44, 0.00) 59.77%),
-                url('/images/hero-image-xs.jpg') center 25% / cover no-repeat;
+                url('/images/hero-image-xs.jpg') center 50% / cover no-repeat;
 }
 
 .heroContent {
@@ -52,6 +52,8 @@
     .heroContainer {
         aspect-ratio: 3/2;
         align-items: flex-start;
+        background: linear-gradient(0deg, #2A2D2C 0.09%, rgba(42, 45, 44, 0.00) 59.77%),
+                    url('/images/hero-image-md.jpg') lightgray 50% / cover no-repeat;
     }
 
     .heroContent {
