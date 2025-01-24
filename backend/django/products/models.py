@@ -21,7 +21,7 @@ class Product(models.Model):
 
 
 class Departure(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='departures', on_delete=models.CASCADE)
     start_date = models.DateField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     booked_pax = models.IntegerField()
