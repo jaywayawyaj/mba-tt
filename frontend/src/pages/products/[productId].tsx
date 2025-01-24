@@ -1,43 +1,9 @@
-import Head from 'next/head';
-import { addDays, format } from 'date-fns';
+import { Product, ProductDetailProps } from '@/types/product';
+import { SEOHead } from '@/components/SEOHead';
+import { isProductAvailable, sortDepartures } from '@/utils/product';
 import styles from './[productId].module.css';
 import Image from 'next/image';
-
-interface Departure {
-    id: number;
-    start_date: string;
-    price: number;
-    booked_pax: number;
-    max_pax: number;
-}
-
-interface Product {
-    id: number;
-    name: string;
-    description: string;
-    duration: number;
-    departures: Departure[];
-    location: string;
-    difficulty: string;
-}
-
-interface ProductDetailProps {
-    product: Product;
-    departures: Departure[];
-}
-
-const isProductAvailable = (departures: Departure[]) => {
-    return departures.length > 0 && !departures.every(dep => dep.booked_pax === dep.max_pax);
-};
-
-const SEOHead: React.FC<{ title: string; indexable: boolean }> = ({ title, indexable }) => {
-    return (
-        <Head>
-            <meta name="robots" content={indexable ? "index, follow" : "noindex"} />
-            <title>{title}</title>
-        </Head>
-    );
-};
+import { addDays, format } from 'date-fns';
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product, departures }) => {
     if (!product) return <div>Loading...</div>;
@@ -83,7 +49,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, departures }) =>
                         </div>
                     </div>
                     <p className={styles.description}>{product.description}</p>
-
                 </div>
             </div>
             <div className={styles.departuresSection}>
@@ -154,26 +119,16 @@ export async function getStaticProps({ params }: { params: { productId: string }
         if (!res.ok) {
             throw new Error(`Failed to fetch product: ${res.statusText}`);
         }
-        const product: Product = await res.json();
-
-        const departures: Departure[] = [...product.departures].sort((a, b) => {
-            const dateA = new Date(a.start_date);
-            const dateB = new Date(b.start_date);
-            return dateA.getTime() - dateB.getTime();
-        });
+        const product = await res.json();
+        const departures = sortDepartures(product.departures);
 
         return {
-            props: {
-                product,
-                departures,
-            },
+            props: { product, departures },
             revalidate: 60,
         };
     } catch (error) {
         console.error('Error fetching product:', error);
-        return {
-            notFound: true,
-        };
+        return { notFound: true };
     }
 }
 

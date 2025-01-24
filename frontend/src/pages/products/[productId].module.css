@@ -26,18 +26,18 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .title, .description, .detailsContainer {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .detailsContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 24px;
 }
 
@@ -128,7 +128,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 0 16px;
     list-style-type: none;
     width: 100%;
 }
@@ -143,6 +142,10 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+    .departuresSection {
+        padding: 0 32px 16px;
+    }
+
     .departuresList {
         flex-direction: row;
         flex-wrap: wrap;
@@ -156,6 +159,9 @@
 }
 
 @media (min-width: 1024px) {
+    .departuresSection {
+        padding: 0 32px 16px;
+    }
     .departuresList {
         flex-direction: row;
         flex-wrap: wrap;
