@@ -25,4 +25,5 @@ class ProductSerializer(serializers.ModelSerializer):
             "difficulty",
             "duration",
             "departures",
+            "location",
         ]
