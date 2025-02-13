@@ -27,7 +27,9 @@
 }
 
 .imageSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     width: 50%;
     aspect-ratio: 16/9;
     border-radius: 8px;
@@ -41,7 +43,9 @@
 }
 
 .titleSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     height: 40px;
     width: 80%;
     border-radius: 4px;
@@ -54,7 +58,9 @@
 }
 
 .line {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     height: 16px;
     border-radius: 4px;
 }
@@ -64,7 +70,9 @@
 .line:nth-child(3) { width: 75%; }
 
 .priceSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     height: 32px;
     width: 120px;
     border-radius: 4px;
@@ -75,7 +83,9 @@
 }
 
 .departuresTitleSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     height: 32px;
     width: 200px;
     margin-bottom: 24px;
@@ -89,7 +99,9 @@
 }
 
 .departureItemSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     padding: 20px;
     border-radius: 8px;
     display: flex;
@@ -98,7 +110,9 @@
 }
 
 .dateSkeleton {
-    composes: skeleton;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
     height: 24px;
     width: 160px;
     border-radius: 4px;
