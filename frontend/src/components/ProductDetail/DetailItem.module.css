@@ -1,0 +1,33 @@
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detailIcon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.detailText {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--Primary-White, #FFF);
+    font-family: var(--font-rubik);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 16px;
+    letter-spacing: -0.24px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .detailText {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: -0.28px;
+    }
+}

@@ -1,0 +1,59 @@
+.departureItem {
+    border: 1px solid #FFF;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    color: #FFF;
+    transition: border-color 0.2s ease;
+}
+
+.departureItem:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.departureItem p {
+    margin: 0.5rem 0;
+    font-family: var(--font-rubik);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.fullyBooked, .available {
+    display: inline-flex;
+    align-items: center;
+    justify-self: flex-end;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.fullyBooked {
+    color: #ff4d4d;
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.available {
+    color: #4dff4d;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .departureItem {
+        flex: 0 1 calc(50% - 12px);
+        min-width: 280px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .departureItem {
+        flex: 0 1 calc(33.333% - 16px);
+        min-width: 280px;
+    }
+}

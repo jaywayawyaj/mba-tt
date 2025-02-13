@@ -1,0 +1,115 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+.heroSkeleton {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.imageSkeleton {
+    composes: skeleton;
+    width: 50%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+}
+
+.contentSkeleton {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.titleSkeleton {
+    composes: skeleton;
+    height: 40px;
+    width: 80%;
+    border-radius: 4px;
+}
+
+.descriptionSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.line {
+    composes: skeleton;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.line:nth-child(1) { width: 100%; }
+.line:nth-child(2) { width: 90%; }
+.line:nth-child(3) { width: 75%; }
+
+.priceSkeleton {
+    composes: skeleton;
+    height: 32px;
+    width: 120px;
+    border-radius: 4px;
+}
+
+.departuresSkeleton {
+    margin-top: 48px;
+}
+
+.departuresTitleSkeleton {
+    composes: skeleton;
+    height: 32px;
+    width: 200px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+}
+
+.departuresListSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.departureItemSkeleton {
+    composes: skeleton;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dateSkeleton {
+    composes: skeleton;
+    height: 24px;
+    width: 160px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .heroSkeleton {
+        flex-direction: column;
+    }
+
+    .imageSkeleton {
+        width: 100%;
+    }
+}
