@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2A2D2C;
+}
+
+.departuresSection {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0 16px 16px;
+}
+
+.departuresTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.departuresList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style-type: none;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .departuresSection {
+        padding: 0 32px 16px;
+    }
+
+    .departuresList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .departuresList {
+        padding: 0;
+    }
+}
+
+.noDepartures {
+    text-align: center;
+    color: #FFF;
+}
+
+.errorContainer {
+    padding: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.errorContainer h1 {
+    color: #e53e3e;
+    margin-bottom: 1rem;
+}
+
+.errorContainer p {
+    color: #4a5568;
+}
